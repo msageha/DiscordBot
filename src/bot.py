@@ -16,7 +16,7 @@ class Bot(discord.Client):
 
     @client.event
     async def on_message(self, message: discord.Message):
-        replyList = [
+        emojiList = [
             '<:anikoCute:844821652709965834>',
             '<:anikoHello:844821710498955264>',
             '<:anikoLove:844821610515136552>',
@@ -27,8 +27,8 @@ class Bot(discord.Client):
         if message.author.bot:
             return
         else:
-            reply = random.choice(replyList)
-            await message.channel.send(reply)
+            emoji = random.choice(emojiList)
+            await message.add_reaction(emoji)
 
 
 if __name__ == "__main__":
